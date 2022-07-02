@@ -57,6 +57,7 @@ jobs:
           healthcheck: "https://full-stack-bloglist.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+          appdir: "backend"
 
   tag_release:
     needs: [build_test_deploy]
