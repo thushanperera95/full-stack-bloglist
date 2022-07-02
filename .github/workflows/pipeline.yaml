@@ -27,5 +27,7 @@ jobs:
         run: cd './frontend/' && npm run lint
       - name: build ui
         run: cd './backend/' && npm run build:ui
-      - name: test backend and frontend
-        run: cd './backend/' && npm run test:all
+      - name: test backend
+        run: cd './backend/' && npm run test
+      - name: test frontend
+        run: cd './frontend/' && npm run test
