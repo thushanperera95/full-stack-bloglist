@@ -22,9 +22,9 @@ jobs:
       - name: npm install frontend
         run: cd './frontend/' && npm install
       - name: lint backend
-        run: cd './backend/ && npm run lint
+        run: cd './backend/' && npm run lint
       - name: lint frontend
-        run: cd './frontend/ && npm run lint
+        run: cd './frontend/' && npm run lint
       - name: build ui
         run: cd './backend/' && npm run build:ui
       - name: test backend and frontend
