@@ -12,15 +12,17 @@ jobs:
   build_test_deploy:
     runs-on: ubuntu-20.04
     timeout-minutes: 20
-    env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-      SECRET: ${{ secrets.SECRET }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
+        with:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+          SECRET: ${{ secrets.SECRET }}
       - name: npm install backend
         run: cd './backend/' && npm install
       - name: npm install frontend
