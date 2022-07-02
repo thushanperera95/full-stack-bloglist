@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: "16"
       - name: npm install backend
-        run: cd '../backend/' && npm install
+        run: cd './backend/' && npm install
       - name: npm install frontend
-        run: cd '../frontend/' && npm install
+        run: cd './frontend/' && npm install
       - name: build ui
-        run: cd '../backend/' && npm run build:ui
+        run: cd './backend/' && npm run build:ui
       - name: test backend and frontend
-        run: cd '../backend/' && npm run test:all
+        run: cd './backend/' && npm run test:all
