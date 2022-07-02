@@ -20,7 +20,7 @@
     "cypress:open": "cypress open",
     "test:ci": "CI=true npm test",
     "test:e2e": "cypress run --config video=false",
-    "start:backend": "cd '../backend/' && npm run start"
+    "start:backend": "cd '../backend/' && npm run start:test"
   },
   "eslintConfig": {
     "extends": [
