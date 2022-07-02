@@ -1,0 +1,27 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
+
+jobs:
+  build_test_deploy:
+    runs-on: ubuntu-20.04
+    timeout_minutes: 20
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - name: npm install backend
+        run: cd '../backend/' && npm install
+      - name: npm install frontend
+        run: cd '../frontend/' && npm install
+      - name: build ui
+        run: cd '../backend/' && npm run build:ui
+      - name: test backend and frontend
+        run: cd '../backend/' && npm run test:all
