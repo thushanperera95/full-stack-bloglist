@@ -6,6 +6,9 @@
   "jest": {
     "testPathIgnorePatterns": [
       "controllers/test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "./jest/defaultTimeout.js"
     ]
   },
   "scripts": {
