@@ -4,6 +4,7 @@ const mapValues = require('lodash/fp/map')
 const maxBy = require('lodash/fp/maxBy')
 const head = require('lodash/fp/head')
 
+// eslint-disable-next-line no-unused-vars
 const dummy = (blogs) => {
   return 1
 }

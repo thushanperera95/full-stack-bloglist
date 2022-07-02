@@ -79,6 +79,7 @@ describe('Blog app', function() {
       })
 
       it('user cannot remove a blog that they did not create', function() {
+        // eslint-disable-next-line cypress/no-unnecessary-waiting
         cy.wait(5005)
         cy.get('button:contains("logout")').click()
 
