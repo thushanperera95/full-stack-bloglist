@@ -19,7 +19,8 @@
     "lint": "eslint .",
     "cypress:open": "cypress open",
     "test:ci": "CI=true npm test",
-    "test:e2e": "cypress run --config video=false"
+    "test:e2e": "cypress run --config video=false",
+    "start:backend": "cd '../backend/' && npm run start"
   },
   "eslintConfig": {
     "extends": [
