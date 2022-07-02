@@ -24,7 +24,8 @@ jobs:
           ENV_TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           ENV_SECRET: ${{ secrets.SECRET }}
           ENV_PORT: ${{ secrets.PORT }}
-      - run: echo "$(cat .env)"
+      - name: move .env into backend
+        run: mv .env './backend/'
       - name: npm install backend
         run: cd './backend/' && npm install
       - name: npm install frontend
